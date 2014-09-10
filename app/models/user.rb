@@ -49,8 +49,10 @@ class User
   validates_presence_of :name
   attr_accessible :name, :role, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at
 
-  def admin?
-    role == "admin"
-  end
+  ########### authorization start ###############
+  # def admin?
+  #   role == "admin"
+  # end
+  ########### authorization end #################
 
 end

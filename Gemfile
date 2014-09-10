@@ -34,3 +34,5 @@ group :test do
 end
 
 gem 'rails_admin'
+
+gem "cancan"

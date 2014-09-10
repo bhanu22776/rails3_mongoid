@@ -3,16 +3,20 @@
 
 RailsAdmin.config do |config|
 
+  ########### authorization start ###############
+  # config.authorize_with do |controller|
+  #   redirect_to main_app.root_path unless current_user.try(:admin?)
+  # end
+  ########### authorization end ##################
 
   ################  Global configuration  ################
-  config.authorize_with do |controller|
-    redirect_to main_app.root_path unless current_user.try(:admin?)
-  end
   # Set the admin name here (optional second array element will appear in red). For example:
   config.main_app_name = ['Rails3 Mongoid Devise', 'Admin']
   # or for a more dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
+  config.authorize_with :cancan
+  
   # RailsAdmin may need a way to know who the current user is]
   config.current_user_method { current_user } # auto-generated
 
