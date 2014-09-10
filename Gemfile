@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'figaro'
 gem 'mongoid'
+gem 'bson_ext'
 gem 'therubyracer', :platform=>:ruby
 group :development do
   gem 'better_errors'
@@ -31,3 +32,5 @@ group :test do
   gem 'launchy'
   gem 'mongoid-rspec'
 end
+
+gem 'rails_admin'
